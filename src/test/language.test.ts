@@ -49,7 +49,7 @@ version = "0.1.0"`;
 
 		test('Should have proper language configuration', () => {
 			// Verify that the language configuration exists
-			const extensionPath = vscode.extensions.getExtension('jarbas-gouveia.poetry-syntax-highlight')?.extensionPath;
+			const extensionPath = vscode.extensions.getExtension('jarbasgouveia.poetry-syntax-highlight')?.extensionPath;
 			if (extensionPath) {
 				const packageJsonPath = path.join(extensionPath, 'package.json');
 				if (fs.existsSync(packageJsonPath)) {
@@ -79,7 +79,7 @@ version = "0.1.0"`;
 
 	suite('Grammar File Tests', () => {
 		test('Should have valid grammar file', () => {
-			const extensionPath = vscode.extensions.getExtension('jarbas-gouveia.poetry-syntax-highlight')?.extensionPath;
+			const extensionPath = vscode.extensions.getExtension('jarbasgouveia.poetry-syntax-highlight')?.extensionPath;
 			if (extensionPath) {
 				const grammarPath = path.join(extensionPath, 'syntaxes', 'poetry.tmLanguage.json');
 
@@ -106,7 +106,7 @@ version = "0.1.0"`;
 		});
 
 		test('Should have comprehensive pattern coverage', () => {
-			const extensionPath = vscode.extensions.getExtension('jarbas-gouveia.poetry-syntax-highlight')?.extensionPath;
+			const extensionPath = vscode.extensions.getExtension('jarbasgouveia.poetry-syntax-highlight')?.extensionPath;
 			if (extensionPath) {
 				const grammarPath = path.join(extensionPath, 'syntaxes', 'poetry.tmLanguage.json');
 

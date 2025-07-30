@@ -2,9 +2,9 @@
 
 <div align="center">
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/jarbas-gouveia.poetry-syntax-highlight)](https://marketplace.visualstudio.com/items?itemName=jarbas-gouveia.poetry-syntax-highlight)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/jarbas-gouveia.poetry-syntax-highlight)](https://marketplace.visualstudio.com/items?itemName=jarbas-gouveia.poetry-syntax-highlight)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/jarbas-gouveia.poetry-syntax-highlight)](https://marketplace.visualstudio.com/items?itemName=jarbas-gouveia.poetry-syntax-highlight)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/jarbasgouveia.poetry-syntax-highlight)](https://marketplace.visualstudio.com/items?itemName=jarbasgouveia.poetry-syntax-highlight)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/jarbasgouveia.poetry-syntax-highlight)](https://marketplace.visualstudio.com/items?itemName=jarbasgouveia.poetry-syntax-highlight)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/jarbasgouveia.poetry-syntax-highlight)](https://marketplace.visualstudio.com/items?itemName=jarbasgouveia.poetry-syntax-highlight)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Enhanced syntax highlighting for Poetry `pyproject.toml` files in Visual Studio Code**
@@ -91,7 +91,7 @@ Poetry is the modern dependency management and packaging tool for Python project
 ### From Command Line
 
 ```bash
-code --install-extension jarbas-gouveia.poetry-syntax-highlight
+code --install-extension jarbasgouveia.poetry-syntax-highlight
 ```
 
 ### Manual Installation

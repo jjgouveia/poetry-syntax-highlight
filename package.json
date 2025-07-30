@@ -2,7 +2,7 @@
   "name": "poetry-syntax-highlight",
   "displayName": "Poetry Syntax Highlight",
   "description": "A simple syntax highlighter for Poetry projects",
-  "publisher": "jarbas-gouveia",
+  "publisher": "jarbasgouveia",
   "author": {
     "name": "Jarbas Gouveia",
     "email": "gouvik.dev@gmail.com"

@@ -357,7 +357,7 @@ build-backend = "${backend}"
  * Constants for testing
  */
 export const TEST_CONSTANTS = {
-	EXTENSION_ID: 'jarbas-gouveia.poetry-syntax-highlight',
+	EXTENSION_ID: 'jarbasgouveia.poetry-syntax-highlight',
 	LANGUAGE_ID: 'poetry-toml',
 	PYPROJECT_FILENAME: 'pyproject.toml',
 	DEFAULT_TIMEOUT: 5000,

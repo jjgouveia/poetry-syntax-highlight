@@ -24,7 +24,7 @@ suite('Poetry Syntax Highlight Extension Tests', () => {
 
 	suite('Extension Activation', () => {
 		test('Should activate extension successfully', async () => {
-			const extension = vscode.extensions.getExtension('jarbas-gouveia.poetry-syntax-highlight');
+			const extension = vscode.extensions.getExtension('jarbasgouveia.poetry-syntax-highlight');
 			assert.ok(extension, 'Extension should be found');
 
 			if (extension && !extension.isActive) {

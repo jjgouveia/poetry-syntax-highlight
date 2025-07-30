@@ -9,7 +9,7 @@ suite('Integration Tests', () => {
 
 	suite('Extension Lifecycle', () => {
 		test('Should activate extension when opening pyproject.toml', async () => {
-			const extension = vscode.extensions.getExtension('jarbas-gouveia.poetry-syntax-highlight');
+			const extension = vscode.extensions.getExtension('jarbasgouveia.poetry-syntax-highlight');
 			assert.ok(extension, 'Extension should be installed');
 
 			// Create a pyproject.toml document
