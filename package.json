@@ -3,6 +3,7 @@
   "displayName": "Poetry Syntax Highlight",
   "description": "A simple syntax highlighter for Poetry projects",
   "publisher": "jarbasgouveia",
+  "icon": "icon.png",
   "author": {
     "name": "Jarbas Gouveia",
     "email": "gouvik.dev@gmail.com"
