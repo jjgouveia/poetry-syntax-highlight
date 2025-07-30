@@ -1,0 +1,280 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Poetry TOML",
+  "scopeName": "source.poetry-toml",
+  "fileTypes": ["pyproject.toml"],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#build-system"
+    },
+    {
+      "include": "#poetry-sections"
+    },
+    {
+      "include": "#tool-sections"
+    },
+    {
+      "include": "#tables"
+    },
+    {
+      "include": "#key-value-pairs"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#booleans"
+    },
+    {
+      "include": "#arrays"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "match": "#.*$",
+          "name": "comment.line.hash.poetry-toml"
+        }
+      ]
+    },
+    "build-system": {
+      "patterns": [
+        {
+          "match": "^\\s*\\[\\s*(build-system)\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.build-system.poetry-toml"
+            }
+          }
+        }
+      ]
+    },
+    "poetry-sections": {
+      "patterns": [
+        {
+          "match": "^\\s*\\[\\s*(tool\\.poetry)\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.poetry.poetry-toml"
+            }
+          }
+        },
+        {
+          "match": "^\\s*\\[\\s*(tool\\.poetry\\.(dependencies|dev-dependencies))\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.poetry-dependencies.poetry-toml"
+            }
+          }
+        },
+        {
+          "match": "^\\s*\\[\\s*(tool\\.poetry\\.group\\.[^\\]]+\\.dependencies)\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.poetry-group-dependencies.poetry-toml"
+            }
+          }
+        },
+        {
+          "match": "^\\s*\\[\\s*(tool\\.poetry\\.(scripts|extras|urls))\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.poetry-config.poetry-toml"
+            }
+          }
+        }
+      ]
+    },
+    "tool-sections": {
+      "patterns": [
+        {
+          "match": "^\\s*\\[\\s*(tool\\.[^\\]]+)\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.tool.poetry-toml"
+            }
+          }
+        }
+      ]
+    },
+    "tables": {
+      "patterns": [
+        {
+          "match": "^\\s*\\[\\s*([^\\]]+)\\s*\\]",
+          "captures": {
+            "1": {
+              "name": "entity.name.section.poetry-toml"
+            }
+          }
+        }
+      ]
+    },
+    "key-value-pairs": {
+      "patterns": [
+        {
+          "match": "^\\s*(name|version|description|authors|maintainers|license|readme|homepage|repository|documentation|keywords|classifiers|include|exclude)\\s*(=)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.poetry-metadata.poetry-toml"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.poetry-toml"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(requires|build-backend)\\s*(=)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.build-system.poetry-toml"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.poetry-toml"
+            }
+          }
+        },
+        {
+          "match": "^\\s*(python|[a-zA-Z0-9_-]+)\\s*(=)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.dependency.poetry-toml"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.poetry-toml"
+            }
+          }
+        },
+        {
+          "match": "^\\s*([a-zA-Z0-9_-]+)\\s*(=)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.poetry-toml"
+            },
+            "2": {
+              "name": "punctuation.separator.key-value.poetry-toml"
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.poetry-toml",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.poetry-toml",
+              "match": "\\\\."
+            },
+            {
+              "name": "constant.numeric.version-constraint.poetry-toml",
+              "match": "\\^[0-9]+\\.[0-9]+(\\.[0-9]+)?"
+            },
+            {
+              "name": "constant.numeric.version-constraint.poetry-toml",
+              "match": "~[0-9]+\\.[0-9]+(\\.[0-9]+)?"
+            },
+            {
+              "name": "constant.numeric.version-constraint.poetry-toml",
+              "match": ">=[0-9]+\\.[0-9]+(\\.[0-9]+)?"
+            },
+            {
+              "name": "constant.numeric.version-constraint.poetry-toml",
+              "match": "<=[0-9]+\\.[0-9]+(\\.[0-9]+)?"
+            },
+            {
+              "name": "constant.numeric.version.poetry-toml",
+              "match": "[0-9]+\\.[0-9]+(\\.[0-9]+)?"
+            },
+            {
+              "name": "string.interpolated.url.poetry-toml",
+              "match": "https?://[^\"\\s]+"
+            },
+            {
+              "name": "string.interpolated.git.poetry-toml",
+              "match": "git@[^\"\\s:]+(:[^\"\\s]+)?"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.poetry-toml",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.poetry-toml",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.triple.poetry-toml",
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.poetry-toml",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.poetry-toml",
+          "match": "\\b[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.float.poetry-toml",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.poetry-toml",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "arrays": {
+      "patterns": [
+        {
+          "name": "meta.array.poetry-toml",
+          "begin": "\\[",
+          "end": "\\]",
+          "patterns": [
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#numbers"
+            },
+            {
+              "include": "#booleans"
+            },
+            {
+              "include": "#comments"
+            },
+            {
+              "name": "punctuation.separator.array.poetry-toml",
+              "match": ","
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
